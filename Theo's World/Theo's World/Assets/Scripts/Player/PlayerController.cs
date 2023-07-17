@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
   [SerializeField] public float Speed = 5f;
   [SerializeField] public float JumpFactor = 50f;
+  [SerializeField] public float FallFactor = 1f;
   public bool isGrounded = true;
   public bool isHurt = false;
   public bool isSprinting = false;
