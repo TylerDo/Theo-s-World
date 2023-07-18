@@ -351,11 +351,19 @@
 "Assets/Scripts/HardwareControllers/Ps4Controller.cs"
 "Assets/Scripts/InteractionSystem/IInteractable.cs"
 "Assets/Scripts/InteractionSystem/InteractableBase.cs"
+"Assets/Scripts/InteractionSystem/InteractionController.cs"
+"Assets/Scripts/InteractionSystem/InteractionData.cs"
+"Assets/Scripts/InteractionSystem/InteractionHandler.cs"
+"Assets/Scripts/InteractionSystem/InteractionInputData.cs"
+"Assets/Scripts/Item/ItemBase.cs"
 "Assets/Scripts/Player/PlayerController.cs"
 "Assets/Scripts/VitalsSystem/EnergySystem.cs"
 "Assets/Scripts/VitalsSystem/HealthSystem.cs"
 "Assets/Scripts/VitalsSystem/VitalsBar.cs"
 "Assets/Scripts/VitalsSystem/VitalsSystem.cs"
+"Assets/Scripts/Weapon/Animations/SwordSwing.cs"
+"Assets/Scripts/Weapon/IWeapon.cs"
+"Assets/Scripts/Weapon/Sword.cs"
 -langversion:9.0
 
 /deterministic

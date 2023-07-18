@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Sword : ItemBase, IWeapon
 {
+  private bool isEquipped = false;
+
   public int AttackPower => 1;
 
   public float HoldDuration => 2;
@@ -14,7 +16,11 @@ public class Sword : ItemBase, IWeapon
 
   public bool IsInteractable => true;
 
-  public bool IsEquipped => false;
+  public bool IsEquipped
+  {
+    get => isEquipped;
+    set => isEquipped = value;
+  }
 
 
   public void Attack()
