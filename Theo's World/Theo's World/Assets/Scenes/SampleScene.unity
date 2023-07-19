@@ -24040,7 +24040,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899726167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: -6.85, y: 2, z: -2.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38120,7 +38120,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 4.0023217, z: 5}
+  m_Size: {x: 0.85425246, y: 4.0023217, z: 0.21870272}
   m_Center: {x: 2.160151, y: 2.035618, z: -0.0000011771917}
 --- !u!114 &1395920496
 MonoBehaviour:
@@ -38137,6 +38137,39 @@ MonoBehaviour:
   Description: 'Sword '
   ItemName: Sword of the mighty
   ItemIcon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!95 &1395920500
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395920490}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb555aa7d43e79e4d9ba2488dd76ce9e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1395920501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395920490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08f67cf754b6a64fb9cf0f5e8b836cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sword: {fileID: 1395920490}
 --- !u!1001 &1396535927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45213,6 +45246,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 1990641296273112, guid: 20515f88563ab2f47a21653ebf68db85, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 4372482557233378, guid: 20515f88563ab2f47a21653ebf68db85, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -45235,7 +45272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4372482557233378, guid: 20515f88563ab2f47a21653ebf68db85, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0000018099951
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4372482557233378, guid: 20515f88563ab2f47a21653ebf68db85, type: 3}
       propertyPath: m_LocalRotation.y
@@ -45243,7 +45280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4372482557233378, guid: 20515f88563ab2f47a21653ebf68db85, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4372482557233378, guid: 20515f88563ab2f47a21653ebf68db85, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
