@@ -18,7 +18,10 @@ public class SwordSwing : MonoBehaviour
   {
     if (Gamepad.current.squareButton.wasPressedThisFrame)
     {
-      StartCoroutine(SwordSwingAction());
+      if (Sword.GetComponent<Sword>().IsEquipped)
+      {
+        StartCoroutine(SwordSwingAction());
+      }
     }
   }
 
