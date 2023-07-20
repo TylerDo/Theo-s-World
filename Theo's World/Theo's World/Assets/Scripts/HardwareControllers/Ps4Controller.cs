@@ -85,6 +85,8 @@ public class Ps4Controller : MonoBehaviour
       sprintFactor = SprintModifier;
     }
     Player.transform.position += new Vector3(movementAmount.x, 0, movementAmount.y) * PlayerController.Speed * Time.deltaTime * sprintFactor;
+    Debug.Log(Player.transform.position);
+    Player.transform.LookAt(Player.transform.position + new Vector3(movementAmount.x, 0,movementAmount.y));
   }
   private void Fall()
   {

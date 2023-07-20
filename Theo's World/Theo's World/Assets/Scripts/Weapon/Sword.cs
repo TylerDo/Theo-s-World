@@ -22,7 +22,6 @@ public class Sword : ItemBase, IWeapon
     set => isEquipped = value;
   }
 
-
   public void Attack()
   {
     //Implement
@@ -30,9 +29,20 @@ public class Sword : ItemBase, IWeapon
 
   public override void Equip()
   {
-    var c = GameObject.FindGameObjectWithTag("Player");
-    transform.SetParent(GameObject.FindGameObjectWithTag("Player").transform);
+    var player = GameObject.FindGameObjectWithTag("Player");
+
+    // Get the colliders for the player and sword
+    Collider playerCollider = player.GetComponent<Collider>();
+    Collider swordCollider = GetComponent<Collider>();
+
+    // Ignore collisions between the player and sword colliders
+    Physics.IgnoreCollision(playerCollider, swordCollider);
+    transform.SetParent(player.transform);
+    // Set the local position of the object relative to the player
     transform.localPosition = Vector3.zero;
+    transform.position = Vector3.zero;
+    Debug.Log(transform.position);
+    new WaitForSeconds(3.0f);
     IsEquipped = true;
   }
 }
