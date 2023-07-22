@@ -16,7 +16,7 @@ public class Ps4Controller : MonoBehaviour
   {
     foreach (Gamepad gp in Gamepad.all)
     {
-      if(gp.GetType() == typeof(DualShock4GamepadHID))
+      if (gp.GetType() == typeof(DualShock4GamepadHID))
       {
         PS4Controller = (DualShock4GamepadHID)gp;
       }
@@ -41,28 +41,36 @@ public class Ps4Controller : MonoBehaviour
     {
       if (PS4Controller is not null)
       {
-        //Sprinting
-        if (PlayerController.isGrounded == true)
+        //Pausae
+        if (PS4Controller.optionsButton.wasPressedThisFrame)
         {
-          PlayerController.isSprinting = IsSprinting();
+          PauseController.PauseGame();
         }
-        PlayerController.isMoving = IsAnyLeftStickDirectionPressed();
-        if (PlayerController.isMoving)
+        if (!PauseController.isGamePaused)
         {
-          //Movements N E S W
-          Move();
-        }
-        //jumping
-        if (PlayerController.isGrounded == true)
-        {
-          if (PS4Controller.crossButton.isPressed)
+          //Sprinting
+          if (PlayerController.isGrounded == true)
           {
-            Jump();
+            PlayerController.isSprinting = IsSprinting();
           }
-        }
-        else
-        {
-          Fall();
+          PlayerController.isMoving = IsAnyLeftStickDirectionPressed();
+          if (PlayerController.isMoving)
+          {
+            //Movements N E S W
+            Move();
+          }
+          //jumping
+          if (PlayerController.isGrounded == true)
+          {
+            if (PS4Controller.crossButton.isPressed)
+            {
+              Jump();
+            }
+          }
+          else
+          {
+            Fall();
+          }
         }
       }
     }
@@ -75,17 +83,17 @@ public class Ps4Controller : MonoBehaviour
   private bool IsAnyLeftStickDirectionPressed() => PS4Controller.leftStick.ReadValue() != Vector2.zero;
 
   private bool IsSprinting() => PS4Controller.leftStickButton.isPressed;
-  
+
   private void Move()
   {
     Vector2 movementAmount = PS4Controller.leftStick.ReadValue();
     float sprintFactor = 1.0f;
-    if(PlayerController.isSprinting)
+    if (PlayerController.isSprinting)
     {
       sprintFactor = SprintModifier;
     }
     Player.transform.position += new Vector3(movementAmount.x, 0, movementAmount.y) * PlayerController.Speed * Time.deltaTime * sprintFactor;
-    Player.transform.LookAt(Player.transform.position + new Vector3(movementAmount.x, 0,movementAmount.y));
+    Player.transform.LookAt(Player.transform.position + new Vector3(movementAmount.x, 0, movementAmount.y));
   }
   private void Fall()
   {

@@ -18,11 +18,14 @@ public class SwordSwing : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    if (Gamepad.current.squareButton.isPressed)
+    if (!PauseController.isGamePaused)
     {
-      if (Sword.GetComponent<Sword>().IsEquipped)
+      if (Gamepad.current.squareButton.isPressed)
       {
-        StartCoroutine(SwordSwingAction());
+        if (Sword.GetComponent<Sword>().IsEquipped)
+        {
+          StartCoroutine(SwordSwingAction());
+        }
       }
     }
   }
