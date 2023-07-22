@@ -36,8 +36,7 @@ public class InteractionController : MonoBehaviour
     var ray = new Ray(transform.position, transform.forward);
     //bool hitSomething = Physics.SphereCast(ray, raySphereRadius, out RaycastHit hitInfo, rayDistance, interactableLayer);
     RaycastHit hitInfo;
-    float raycastDistance = 2.0f;
-    bool hitSomething = Physics.Raycast(transform.position, transform.forward, out hitInfo, raycastDistance, interactableLayer);
+    bool hitSomething = Physics.Raycast(transform.position, transform.forward, out hitInfo, rayDistance, interactableLayer);
     if (hitSomething)
     {
       Debug.Log("Raycast hit: " + hitInfo.collider.name);
