@@ -33,10 +33,10 @@ public class SwordSwing : MonoBehaviour
   IEnumerator SwordSwingAction()
   {
     var player = GameObject.FindGameObjectWithTag("Player");
-    Debug.Log(Sword.GetComponent<Animator>().transform.position);
+    Sword.GetComponent<SwordTrail>().EnableTrail();
     Sword.GetComponent<Animator>().Play("SwordSwing");
     yield return new WaitForSeconds(1.0f);
     Sword.GetComponent<Animator>().Play("New State");
-
+    Sword.GetComponent<SwordTrail>().DisableTrail();
   }
 }
