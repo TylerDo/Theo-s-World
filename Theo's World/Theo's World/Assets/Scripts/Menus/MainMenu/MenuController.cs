@@ -186,10 +186,10 @@ public class MenuController : MonoBehaviour
     };
     isVerticalButtonLayout = button.name switch
     {
-      "NewGameButton" => true,
-      "LoadGameButton" => true,
-      "OptionsButton" => false,
-      "SettingsButton" => false,
+      "NewGameButton" => false,
+      "LoadGameButton" => false,
+      "OptionsButton" => true,
+      "SettingsButton" => true,
       _ => true,
     };
     foreach (Button b in menuButtons)
